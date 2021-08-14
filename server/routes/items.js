@@ -14,9 +14,21 @@ itemRouter.get(
 );
 
 itemRouter.get(
-  "/beverages/:id",
+  "/items/:id",
   itemControllers.getItemByID
 );
+
+itemRouter.put(
+  "/items/:id",
+  itemControllers.updateItem
+);
+
+item.Router.delete(
+  "/beverages/:id",
+  itemControllers.deleteItem
+);
+
+
 
 
 module.exports = itemRouter;
