@@ -23,8 +23,8 @@ itemRouter.put(
   itemControllers.updateItem
 );
 
-item.Router.delete(
-  "/beverages/:id",
+itemRouter.delete(
+  "/items/:id",
   itemControllers.deleteItem
 );
 

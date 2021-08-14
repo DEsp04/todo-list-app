@@ -54,11 +54,12 @@ const updateItem = async (req, res) => {
       req.body,
       { new: true }
     );
-    // console.log("From updateBevera-->", item)
+    // console.log("From updateItem-->", item)
 
     if (!item) {
       return res.status(404).json({ msg: "Item not found" });
     }
+    
     res.json(item);
   } catch (err) {
     console.error(err.message);
