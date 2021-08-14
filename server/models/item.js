@@ -21,4 +21,4 @@ const Item = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("users", User);
+module.exports = mongoose.model("items", Item);

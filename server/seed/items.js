@@ -11,13 +11,14 @@ const main = async () => {
       category: "House Chores",
       task: "Must do laundry today at 12pm",
     }
-  ]
+  ];
+  await Item.insertMany(items);
+  console.log("Created many items");
+};
 
+const run = async () => {
+  await main();
+  db.close();
+};
 
-  const run = async () => {
-    await main();
-    db.close();
-  };
-
-  run();
-}
+run();
