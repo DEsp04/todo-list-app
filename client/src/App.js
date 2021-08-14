@@ -8,4 +8,7 @@ function App() {
   );
 }
 
+
+//API: https://todolistproje.herokuapp.com/api/items
+
 export default App;
