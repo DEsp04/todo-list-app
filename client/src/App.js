@@ -1,9 +1,11 @@
 import './App.css';
+import Home from "./screens/home/Home"
+
 
 function App() {
   return (
-    <div className="App text-red-500">
-     <h1>To List App</h1>
+    <div>
+      <Home />
     </div>
   );
 }
