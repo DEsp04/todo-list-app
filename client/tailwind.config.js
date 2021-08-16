@@ -41,7 +41,10 @@ module.exports = {
       },
       'spring-wood': {
         '500': '#faf6ef',
-    }
+      },
+      "teal": {
+        "500": "#008080"
+      }
      
     },
     spacing: {
