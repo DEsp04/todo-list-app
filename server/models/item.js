@@ -11,7 +11,6 @@ const Item = new Schema(
     category: {
       type: String,
       required: true,
-      unique: true,
     },
     task: {
       type: String,

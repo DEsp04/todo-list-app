@@ -8,8 +8,6 @@ export const fetchItems = createAsyncThunk(
   async () => {
     
     const data = getItems()
-    console.log("Items Slice:" + data )
-
     return data;
   }
 );

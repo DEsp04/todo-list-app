@@ -70,11 +70,11 @@ const updateItem = async (req, res) => {
 const deleteItem = async (req, res) => {
   try {
     const { id } = req.params;
-    const item = await Item.findById(id);
+    const item = await Item.findByIdAndDelete(id);
     if (!item) {
       return res.status(404).json({ msg: "Item not found" });
     }
-    await item.remove();
+    // await item.remove();
     res.json({ msg: "Item remove" });
   } catch (error) {
     console.error(err.message);
