@@ -13,12 +13,14 @@ function List() {
   const dispatch = useDispatch();
   const [taskField, setTaskField] = useState("");
   const [categoryField, setCategoryField] = useState("");
+  
   const newItemStatus = useSelector((state) => state.addItem.status)
-  const deleteItemstatus = useSelector((state) => state.deleteItem.status)
+  const deleteItemstatus = useSelector((state) => state.deleteItem.status);
+  const editStatus = useSelector((state) => state.editItem.status);
 
-  const items = useSelector((state) => state?.getItems?.items)
 
-  console.log(deleteItemstatus)
+  const items = useSelector((state) => state?.getItems?.items);
+
   
   const addItem = (e) => {
     e.preventDefault()
@@ -46,6 +48,10 @@ function List() {
    useEffect(() => {
     dispatch(fetchItems());
    }, [deleteItemstatus])
+
+   useEffect(() => {
+    dispatch(fetchItems());
+   }, [editStatus])
 
   
   return (

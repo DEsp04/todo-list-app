@@ -1,10 +1,22 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
-// import { deleteCurrentItem } from "../redux/deleteItemSlice";
+import { updateCurrentItem } from "../redux/editItemSlice";
 
 
-function Edit() {
+function Edit(props) {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const [taskField, setTaskField] = useState(props.task);
+  const [categoryField, setCategoryField] = useState(props.category);
+  const id = props._id
+
+  const update = (e) => {
+    e.preventDefault();
+
+    dispatch(updateCurrentItem({ taskField, categoryField, id }))
+  }
+
+
 
   return (
     <>
@@ -48,28 +60,36 @@ function Edit() {
 
                     <div className="mt-1">  
                         <select
-                          className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="instruction" id="instruction"
-                          // onChange={handleChange}
-                          id="content"
-                          name="content"
-                          type="content"
-                          defaultValue=""
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="instruction" id="instruction"
+                        onChange={(e) => 
+                          setCategoryField(e.target.value)
+                        }
+                        name="instruction"
+                        type="instruction"
+                        // value={ props.category}
+                        defaultValue=""
                         >
                         <option value="" disabled>--Category--</option>
-                        <option value="Alcoholic">Chores</option>
-                        <option value="Non-alcoholic">Study</option>
-                          <option value="Non-alcoholic">Learning</option>
-                          <option value="Non-alcoholic">Health</option>
-                          <option value="Non-alcoholic">Care</option>
-                          <option value="Non-alcoholic">Meeting</option>
+                        <option value="Chores">Chores</option>
+                        <option value="Study">Study</option>
+                          <option value="Learning">Learning</option>
+                          <option value="Health">Health</option>
+                          <option value="Care">Care</option>
+                          <option value="Meeting">Meeting</option>
                       </select>
                     </div>  
                     
                     <div className="mt-1">
-                      <textarea id="instruction" name="instruction" placeholder="Add Todo" rows="3" cols="40" className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        // onChange={(e) => setTaskField(e.target.value)
-                        // }
-                        // value={taskField}
+                      <textarea
+                        id="instruction"
+                        name="instruction"
+                        placeholder="Add Todo"
+                        rows="3" cols="40"
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        onChange={
+                          (e) => setTaskField(e.target.value)
+                        }
+                        // value={props.task}
                                 ></textarea>
                     </div>
 
@@ -81,9 +101,9 @@ function Edit() {
                       className="w-1/3 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-bold font-medium text-blue-500 hover:text-white-500 bg-white-500 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-indigo-500 border-blue-500"
                       type="submit"
                       onClick={
-                        () => {
+                        (e) => {
                           setShowModal(false)
-                          // update()
+                          update(e)
                         }
                       }
                     >
