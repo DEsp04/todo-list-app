@@ -45,9 +45,10 @@ function Item() {
                 return <div className="flex mb-4 items-center" key={index}>
                   <div>
                     <p onClick={(e) => crossLine(e)} className={"w-full text-grey-500 cursor-pointer"}>{item.task}</p>
-                    <p className="text-blue-500 font-bold text-sm">{item.category}</p>
+                    <p className="text-vin-rouge-500 font-bold text-sm">{item.category}</p>
                   </div>
                   <button className="flex-no-shrink p-2 ml-2 border-2 rounded text-red-500 border-red-500 hover:text-white-500 hover:bg-red-500" onClick={() => setToggle(!toggle)}>Remove</button>
+                  <button className="flex-no-shrink p-2 ml-2 border-2 rounded text-blue-500 border-blue-500 hover:text-white-500 hover:bg-blue-500" onClick={() => setToggle(!toggle)}>Edit</button>
                 </div>
               })
             }
