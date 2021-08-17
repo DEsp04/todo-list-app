@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import { fetchItems } from "../redux/itemsSlice";
+import { useDispatch } from "react-redux";
 import { deleteCurrentItem } from "../redux/deleteItemSlice";
 import Edit from "./Edit.js"
 
@@ -41,7 +39,7 @@ function Item(props) {
                     } >
                       Remove
                     </button>
-                    <Edit />
+                    <Edit {...props} />
                 </div>
         </div>
   )
