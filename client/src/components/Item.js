@@ -25,21 +25,24 @@ function Item(props) {
 
 
   return (
-       <div>
-          <div className="flex mb-4 items-center">
+       <div className="p-10 shadow">
+          <div className="flex justify-between mb-4 items-center">
                   <div>
                     <p onClick={(e) => crossLine(e)} className={"w-full text-grey-500 cursor-pointer"}>{props.task}</p>
                     <p className="text-vin-rouge-500 font-bold text-sm">{props.category}</p>
                   </div>
-                   <button className="flex-no-shrink p-2 ml-2 border-2 rounded text-red-500 border-red-500 hover:text-white-500 hover:bg-red-500"
-                    onClick={
-                      () => {
-                        deleteItem(props._id)
-                      }
-                    } >
-                      Remove
-                    </button>
-                    <Edit {...props} />
+        
+                  <div>
+                    <button className="flex-no-shrink p-2 ml-2 border-2 rounded text-red-500 border-red-500 hover:text-white-500 hover:bg-red-500"
+                      onClick={
+                        () => {
+                          deleteItem(props._id)
+                        }
+                      } >
+                        Remove
+                      </button>
+                      <Edit {...props} />
+                    </div>  
                 </div>
         </div>
   )

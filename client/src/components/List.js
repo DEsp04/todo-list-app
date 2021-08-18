@@ -56,10 +56,9 @@ function List() {
   
   return (
     <div className="h-100 w-full  items-center justify-center font-sans">
-      <div className="flex flex-col justify-center items-center bg-white-500 rounded shadow p-6 m-4 w-full">
+      <div className="flex flex-col justify-center items-center bg-white-500 rounded shadow w-full mt-6">
         
         <form className="mb-4" action="#" method="POST">
-          <h1 className="text-grey-500">Todo List</h1>
           <div className="mt-4">
             {/* <input className="shadow rounded-md shadow-sm border-gray-300 appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-500 sm:text-sm" placeholder="Name" /> */}
            
@@ -97,8 +96,9 @@ function List() {
             >Add</button>
           </div>
         </form>
-
-        { showItems() }
+        <div className="w-full">
+          {showItems()}
+        </div>
       </div>
     </div>
   )

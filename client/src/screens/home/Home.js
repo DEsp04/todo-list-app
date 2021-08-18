@@ -5,7 +5,7 @@ import List from "../../components/List.js";
 
 function Home() {
   return (
-    <div>
+    <div >
       <Header />
       <List />
     </div>
