@@ -3,7 +3,6 @@ import Item from "../components/Item.js";
 import { useSelector, useDispatch } from "react-redux";
 import { createNewItem } from "../redux/addNewItemSlice";
 import { fetchItems } from "../redux/itemsSlice";
-import { deleteCurrentItem } from "../redux/deleteItemSlice"
 
 
 
