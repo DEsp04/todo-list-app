@@ -5,7 +5,7 @@ import { removeItem } from "../services/deleteItem";
 
 export const deleteCurrentItem = createAsyncThunk(
   "deleteItem/deleteCurrentItem",
-  async (id) => {
+  async (id: any) => {
     const data = removeItem(id)
     
 
