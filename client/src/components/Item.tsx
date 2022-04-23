@@ -11,7 +11,6 @@ function Item(props: {task: string, category:string, _id: string}) {
 
 
   const deleteItem = (id:string) => {
-    // console.log(id)
     dispatch(deleteCurrentItem(id));
   }
  

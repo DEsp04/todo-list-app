@@ -7,15 +7,14 @@ export const deleteCurrentItem = createAsyncThunk(
   "deleteItem/deleteCurrentItem",
   async (id: string) => {
     const data = removeItem(id)
-    
-
+  
     return data;
   }
 );
 
 type DeleteItem = {
   status: string | null,
-  deletedItem: object | null,
+  deletedItem: any | null,
 }
 
 const initialState = {
