@@ -1,11 +1,11 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { removeItem } from "../services/deleteItem";
 
 
 
 export const deleteCurrentItem = createAsyncThunk(
   "deleteItem/deleteCurrentItem",
-  async (id: any) => {
+  async (id: string) => {
     const data = removeItem(id)
     
 
@@ -13,29 +13,34 @@ export const deleteCurrentItem = createAsyncThunk(
   }
 );
 
+type DeleteItem = {
+  status: string | null,
+  deletedItem: object | null,
+}
+
+const initialState = {
+  status: null,
+  deletedItem: null,
+} as DeleteItem
+
 
 const deleteItemSlice = createSlice({
   name: "deleteItem",
-  initialState: {
-    status: null,
-    deletedItem: null,
-  },
-
-
-  extraReducers: {
-    [deleteCurrentItem.pending]: (state, action) => {
+  initialState,
+  reducers: {},
+  
+  extraReducers: (builder) => {
+    builder.addCase(deleteCurrentItem.pending, (state, action) => {
       state.status = "loading";
-    },
-    [deleteCurrentItem.fulfilled]: (state, {payload}) => {
+    })
+    builder.addCase(deleteCurrentItem.fulfilled, (state, action: PayloadAction<string[]>) => {
       state.status = "success";
-      state.deletedItem = payload;
-    },
-    [deleteCurrentItem.rejected]: (state, action) => {
+      state.deletedItem = action.payload;
+    })
+    builder.addCase(deleteCurrentItem.rejected, (state, action) => {
       state.status = "failed";
-    },
-
+    })
   },
-
 
 })
 

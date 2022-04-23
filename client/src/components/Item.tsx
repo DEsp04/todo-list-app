@@ -10,7 +10,7 @@ function Item(props: {task: string, category:string, _id: string}) {
   const dispatch = useDispatch();
 
 
-  const deleteItem = (id:any) => {
+  const deleteItem = (id:string) => {
     // console.log(id)
     dispatch(deleteCurrentItem(id));
   }
