@@ -8,7 +8,6 @@ export const createNewItem = createAsyncThunk(
   async ({ categoryField, taskField }: {categoryField: string, taskField: string}) => {
     const data = addItem({ categoryField, taskField })
     
-
     return data;
   }
 );
