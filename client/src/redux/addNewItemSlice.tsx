@@ -33,7 +33,7 @@ const newItemSlice = createSlice({
     builder.addCase(createNewItem.pending, (state, action) => {
       state.status = "loading";
     })
-    builder.addCase(createNewItem.fulfilled, (state, action: PayloadAction<string[]>) => {
+    builder.addCase(createNewItem.fulfilled, (state, action) => {
       state.status = "success";
       state.newItem = action.payload;
     })

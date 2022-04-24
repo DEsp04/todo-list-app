@@ -1,7 +1,17 @@
 import axios from "axios";
 
 
-export async function addItem({ categoryField, taskField }: {categoryField: string, taskField: string}) {
+export async function addItem({ categoryField, taskField }: { categoryField: string, taskField: string }) {
+  
+  type Data = {
+    data: {
+      id: string,
+      title: string,
+      description: string,
+      completed: boolean
+    }
+  }
+  
   const results = axios({
     method: "POST",
     data: {
@@ -9,12 +19,10 @@ export async function addItem({ categoryField, taskField }: {categoryField: stri
       category: categoryField,
       task: taskField
     },
-    
     url: "https://todolistproje.herokuapp.com/api/",
-  }).then((res) => {
-    // console.log(res)
+  }).then((res: Data) => {
     return res.data
   })
   
   return results;
-};
+}
