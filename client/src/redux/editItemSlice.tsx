@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { editCurrentItem } from "../services/editItem";
 
 
@@ -30,14 +30,14 @@ const editItemSlice = createSlice({
 
 
   extraReducers: (builder) => {
-    builder.addCase(updateCurrentItem.pending, (state, action) => {
+    builder.addCase(updateCurrentItem.pending, (state) => {
       state.status = "loading";
     })
-    builder.addCase(updateCurrentItem.fulfilled, (state, action: PayloadAction<string[]>) => {
+    builder.addCase(updateCurrentItem.fulfilled, (state, action) => {
       state.status = "success";
       state.editItem = action.payload;
     })
-    builder.addCase(updateCurrentItem.rejected, (state, action) => {
+    builder.addCase(updateCurrentItem.rejected, (state) => {
       state.status = "failed";
     })
   },

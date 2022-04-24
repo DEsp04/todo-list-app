@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { removeItem } from "../services/deleteItem";
 
 
@@ -29,14 +29,14 @@ const deleteItemSlice = createSlice({
   reducers: {},
   
   extraReducers: (builder) => {
-    builder.addCase(deleteCurrentItem.pending, (state, action) => {
+    builder.addCase(deleteCurrentItem.pending, (state) => {
       state.status = "loading";
     })
-    builder.addCase(deleteCurrentItem.fulfilled, (state, action: PayloadAction<string[]>) => {
+    builder.addCase(deleteCurrentItem.fulfilled, (state, action) => {
       state.status = "success";
       state.deletedItem = action.payload;
     })
-    builder.addCase(deleteCurrentItem.rejected, (state, action) => {
+    builder.addCase(deleteCurrentItem.rejected, (state) => {
       state.status = "failed";
     })
   },

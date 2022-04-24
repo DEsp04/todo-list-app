@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Item from "./Item.js";
+import Item from "./Item";
 import { useSelector, useDispatch } from "react-redux";
 import { createNewItem } from "../redux/addNewItemSlice";
 import { fetchItems } from "../redux/itemsSlice";

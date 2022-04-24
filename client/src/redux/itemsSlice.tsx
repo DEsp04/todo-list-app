@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getItems } from "../services/fetchItems";
 
 
@@ -31,14 +31,14 @@ const itemsSlice = createSlice({
 
   extraReducers: (builder) => {
 
-    builder.addCase(fetchItems.pending, (state, action) => {
+    builder.addCase(fetchItems.pending, (state) => {
       state.status = "loading";
     })
-    builder.addCase(fetchItems.fulfilled, (state, action: PayloadAction<string[]>) => {
+    builder.addCase(fetchItems.fulfilled, (state, action) => {
       state.status = "success";
       state.items = action.payload;
     })
-    builder.addCase(fetchItems.rejected, (state, action) => {
+    builder.addCase(fetchItems.rejected, (state) => {
       state.status = "failed";
     })
   },

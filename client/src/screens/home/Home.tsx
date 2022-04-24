@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Header from '../../components/Header.js';
-import List from "../../components/List.js";
+import Header from '../../components/Header';
+import List from "../../components/List";
 
 
 function Home() {

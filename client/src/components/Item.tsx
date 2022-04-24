@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { useDispatch } from "react-redux";
 import { deleteCurrentItem } from "../redux/deleteItemSlice";
-import Edit from "./Edit.js"
+import Edit from "./Edit"
 
 
 
