@@ -15,7 +15,12 @@ export const createNewItem = createAsyncThunk(
 
 type NewItem = {
   status: string | null,
-  newItem: any | null,
+  newItem:  {
+    id: string;
+    title: string;
+    description: string;
+    completed: boolean;
+  } | null,
 }
 
 const initialState = {

@@ -1,7 +1,12 @@
 import axios from "axios";
 
 
-export async function getItems() {
+export async function getItems(): Promise<{
+  id: string;
+  title: string;
+  description: string;
+  completed: boolean;
+}> {
   type Data = {
     data: {
       id: string,

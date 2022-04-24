@@ -14,7 +14,12 @@ export const deleteCurrentItem = createAsyncThunk(
 
 type DeleteItem = {
   status: string | null,
-  deletedItem: any | null,
+  deletedItem:  {
+    id: string;
+    title: string;
+    description: string;
+    completed: boolean;
+  } | null,
 }
 
 const initialState = {

@@ -14,7 +14,12 @@ export const fetchItems = createAsyncThunk(
 
 type Item = {
   status: string | null,
-  items: any | null,
+  items: {
+    id: string;
+    title: string;
+    description: string;
+    completed: boolean;
+  } | null
 }
 
 const initialState = {

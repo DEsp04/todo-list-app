@@ -6,7 +6,7 @@ import Edit from "./Edit"
 
 
 
-function Item(props: {task: string, category:string, _id: string}) {
+function Item(props: {task: string, category:string, _id: string}): JSX.Element {
   const dispatch = useDispatch();
 
 

@@ -1,7 +1,12 @@
 import axios from "axios";
 
 
-export async function editCurrentItem({ categoryField, taskField, id }: { categoryField: string, taskField: string, id: string }) {
+export async function editCurrentItem({ categoryField, taskField, id }: { categoryField: string, taskField: string, id: string }):  Promise<{
+  id: string;
+  title: string;
+  description: string;
+  completed: boolean;
+}> {
   type Data = {
     data: {
       id: string,

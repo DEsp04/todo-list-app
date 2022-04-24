@@ -1,7 +1,12 @@
 import axios from "axios";
 
 
-export async function removeItem(id: string) {
+export async function removeItem(id: string): Promise<{
+  id: string;
+  title: string;
+  description: string;
+  completed: boolean;
+}> {
   
   type Data = {
     data: {

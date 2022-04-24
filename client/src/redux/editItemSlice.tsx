@@ -14,7 +14,12 @@ export const updateCurrentItem = createAsyncThunk(
 
 type EditItem = {
   status: string | null,
-  editItem: any | null,
+  editItem:  {
+    id: string;
+    title: string;
+    description: string;
+    completed: boolean;
+  } | null,
 }
 
 const initialState = {
