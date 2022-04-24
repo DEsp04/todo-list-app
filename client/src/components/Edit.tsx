@@ -3,14 +3,14 @@ import { useDispatch } from "react-redux";
 import { updateCurrentItem } from "../redux/editItemSlice";
 
 
-function Edit(props) {
+function Edit(props: {task: string, category:string, _id: string}) {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [taskField, setTaskField] = useState(props.task);
   const [categoryField, setCategoryField] = useState(props.category);
   const id = props._id
 
-  const update = (e) => {
+  const update = (e: React.MouseEvent<Element, MouseEvent>) => {
     e.preventDefault();
 
     dispatch(updateCurrentItem({ taskField, categoryField, id }))
@@ -60,12 +60,13 @@ function Edit(props) {
 
                     <div className="mt-1">  
                         <select
-                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="instruction" id="instruction"
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        name="instruction"
+                        id="instruction"
                         onChange={(e) => 
                           setCategoryField(e.target.value)
                         }
-                        name="instruction"
-                        type="instruction"
+                        // type="instruction"
                         // value={ props.category}
                         defaultValue=""
                         >
@@ -84,7 +85,7 @@ function Edit(props) {
                         id="instruction"
                         name="instruction"
                         placeholder="Add Todo"
-                        rows="3" cols="40"
+                        rows={3} cols={40}
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         onChange={
                           (e) => setTaskField(e.target.value)

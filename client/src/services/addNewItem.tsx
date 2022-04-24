@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export async function addItem({ categoryField, taskField }) {
+export async function addItem({ categoryField, taskField }: {categoryField: string, taskField: string}) {
   const results = axios({
     method: "POST",
     data: {
