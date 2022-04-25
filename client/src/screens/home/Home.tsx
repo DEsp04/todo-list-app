@@ -3,7 +3,7 @@ import Header from '../../components/Header';
 import List from "../../components/List";
 
 
-function Home() {
+function Home(): JSX.Element {
   return (
     <div >
       <Header />

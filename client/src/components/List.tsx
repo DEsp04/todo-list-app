@@ -43,19 +43,19 @@ function List() {
 
    useEffect(() => {
     dispatch(fetchItems());
-   }, [])
+   }, [dispatch])
   
    useEffect(() => {
     dispatch(fetchItems());
-   }, [newItemStatus])
+   }, [newItemStatus, dispatch])
   
    useEffect(() => {
     dispatch(fetchItems());
-   }, [deleteItemstatus])
+   }, [deleteItemstatus, dispatch])
 
    useEffect(() => {
     dispatch(fetchItems());
-   }, [editStatus])
+   }, [editStatus, dispatch])
 
   
   return (
