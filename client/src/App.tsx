@@ -1,9 +1,9 @@
 import './App.css';
-import React, {Component} from 'react';
+import React from 'react';
 import Home from "./screens/home/Home";
 
 
-function App() {
+function App(): JSX.Element {
   return (
     <div>
       <Home />

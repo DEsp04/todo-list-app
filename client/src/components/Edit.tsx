@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { updateCurrentItem } from "../redux/editItemSlice";
 
 
-function Edit(props: {task: string, category:string, _id: string}) {
+function Edit(props: {task: string, category:string, _id: string}): JSX.Element {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [taskField, setTaskField] = useState(props.task);

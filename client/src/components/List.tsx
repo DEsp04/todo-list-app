@@ -8,7 +8,7 @@ import { fetchItems } from "../redux/itemsSlice";
 
 
 
-function List() {
+function List(): JSX.Element {
   const dispatch = useDispatch();
   const [taskField, setTaskField] = useState("");
   const [categoryField, setCategoryField] = useState("");
