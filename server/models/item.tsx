@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-const Item = new Schema(
+const ItemModel = new Schema(
   {
     username: {
       type: String,
@@ -20,4 +20,4 @@ const Item = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("items", Item);
+module.exports = mongoose.model("items", ItemModel);

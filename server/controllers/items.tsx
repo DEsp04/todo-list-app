@@ -1,6 +1,6 @@
 const Item = require("../models/item");
 
-const createItem = async (req, res) => {
+const createItem = async (req:any, res:any) => {
   const {
     username,
     category,
@@ -21,7 +21,7 @@ const createItem = async (req, res) => {
   }
 };
 
-const getAllItems = async (req, res) => {
+const getAllItems = async (req:any, res:any) => {
   try {
     // console.log(req)
     const items = await Item.find().sort({
@@ -35,7 +35,7 @@ const getAllItems = async (req, res) => {
   }
 };
 
-const getItemByID = async (req, res) => {
+const getItemByID = async (req:any, res:any) => {
   try {
     const { id } = req.params;
     const item = await Item.findById(id);
@@ -46,7 +46,7 @@ const getItemByID = async (req, res) => {
   }
 };
 
-const updateItem = async (req, res) => {
+const updateItem = async (req:any, res: any) => {
   const { id } = req.params;
   try {
     const item = await Item.findOneAndUpdate(
@@ -67,7 +67,7 @@ const updateItem = async (req, res) => {
   }
 };
 
-const deleteItem = async (req, res) => {
+const deleteItem = async (req:any, res:any) => {
   try {
     const { id } = req.params;
     const item = await Item.findByIdAndDelete(id);
